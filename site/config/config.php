@@ -81,8 +81,8 @@ c::set('routes', array(
   array(
     'pattern' => '(:num)/(:num)/(:num)/(:any)',
     'action'  => function($year, $month, $day, $uid) {
-
-      $page = page('posts/' . $uid);
+			$posts_page = c::get('posts-page');
+      $page = page($posts_page.'/' . $uid);
       if(!$page){
         $page = site()->errorPage();
       } else {
