@@ -1,9 +1,9 @@
-# Bootstrap 3 Kirby Starterkit
+# Kirby CMS Bootstrap Blogkit
 
-This is a Bootstrap 3 version of the default starterkit of Kirby CMS.
+Blogkit merges Kirby CMS Bootstrap Starterkit and Blogprint of Jan Hofmann to offer a great Kirby starter for projects that needs a blog.
 
-Demo: <http://bydanimarti.com/themes/kirby/kirbycms-bootstrap-starterkit/>
-
+Blogprint repo: <https://github.com/ausminternet/blogprint> 
+Kirby CMS Bootstrap Starterkit repo: <https://github.com/6ui11em/kirbycms-bootstrap-starterkit>
 
 # Kirby
 
