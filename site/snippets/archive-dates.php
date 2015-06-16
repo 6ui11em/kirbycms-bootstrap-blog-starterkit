@@ -2,18 +2,16 @@
 if(!isset($class)) $class = false;
 ?>
 
-<section id="dates" <?php if($class) echo 'class="' . $class . '"' ?>>
-  <header>
-    <h2>Dates:</h2>
-  </header>
+<div id="dates" <?php if($class) echo 'class="' . $class . '"' ?>>
+	<h4>Dates:</h4>
   <?php if($dates = getDatesArchive()): ?>
-  <ul>
+  <ul class="nav">
   <?php foreach ($dates as $year => $months): ?>
     <li>
-      <a href="/<?= $year ?>">
+      <a href="/<?= $year ?>" class="nav-header">
         <?= $year ?>
       </a>
-      <ul>
+      <ul class="nav">
       <?php foreach ($months as $month => $number): ?>
         <?php $month = DateTime::createFromFormat('!m', $month) ?>
         <li>
@@ -31,4 +29,4 @@ if(!isset($class)) $class = false;
   <?php else: ?>
     <p><strong>No dates found.</strong></p>
   <?php endif ?>
-</section>
+</div>

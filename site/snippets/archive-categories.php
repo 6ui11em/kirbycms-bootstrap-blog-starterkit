@@ -1,11 +1,9 @@
-<section id="categories">
-  <header>
-    <h2>Categories:</h2>
-  </header>
+<div id="categories">
+	<h4>Categories:</h4>
   <?php
   $categories = getCategoriesArchive();
   if($categories->count() > 0): ?>
-    <ul>
+    <ul class="nav">
     <?php foreach($categories as $category): ?>
       <li>
         <a href="<?php echo $category->url() ?>">
@@ -17,4 +15,4 @@
   <?php else: ?>
     <p><strong>No categories found.</strong></p>
   <?php endif ?>
-</section>
+</div>

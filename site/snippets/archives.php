@@ -6,9 +6,9 @@ if(!isset($categories)) $categories = false;
 if(!isset($class))      $class    = false;
 ?>
 
-<section id="archives" <?php if($class) echo 'class="' . $class . '"' ?>>
+<div id="archives" <?php if($class) echo 'class="' . $class . '"' ?>>
   <header>
-    <h1>Archive options:</h1>
+    <h3>Archive options:</h3>
   </header>
 
   <?php if($tags) snippet('archive-tags') ?>
@@ -19,4 +19,4 @@ if(!isset($class))      $class    = false;
 
   <?php if($authors) snippet('archive-authors') ?>
 
-</section>
+</div>

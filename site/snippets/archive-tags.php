@@ -1,11 +1,11 @@
-<section id="tags">
+<div id="tags">
   <header>
-    <h2>Tags:</h2>
+    <h4>Tags:</h4>
   </header>
   <?php
     $tags = getTagsArchive();
     if($tags->count() > 0): ?>
-  <ul>
+  <ul class="nav">
   <?php foreach($tags as $tag): ?>
     <li>
       <a href="<?php echo $tag->url() ?>">
@@ -17,4 +17,4 @@
 <?php else: ?>
   <p><strong>No tags found.</strong></p>
 <?php endif ?>
-</section>
+</div>

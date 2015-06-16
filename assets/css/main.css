@@ -9,6 +9,11 @@
 	max-height: 100%;
 }
 
+/* Nav */
+.nav .nav {
+	padding-left: 15px;
+}
+
 /* Text blocks */
 .text img {
 	max-width: 100%;
