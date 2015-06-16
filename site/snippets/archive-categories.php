@@ -6,7 +6,7 @@
     <ul class="nav">
     <?php foreach($categories as $category): ?>
       <li>
-        <a href="<?php echo $category->url() ?>">
+        <a href="<?php echo $site->url().$category->url() ?>">
           <?php echo $category->name() ?> (<?= $category->results() ?>)
         </a>
       </li>

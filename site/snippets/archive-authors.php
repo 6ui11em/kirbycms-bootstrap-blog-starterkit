@@ -6,7 +6,7 @@
     <ul class="nav">
     <?php foreach($authors as $author): ?>
       <li>
-        <a href="<?php echo $author->url() ?>">
+        <a href="<?php echo $site->url().$author->url() ?>">
           <?= getAuthorName($author->name()) ?> (<?= $author->results() ?>)
         </a>
       </li>

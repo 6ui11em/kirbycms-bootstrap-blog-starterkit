@@ -8,7 +8,7 @@ if(!isset($class)) $class = false;
   <ul class="nav">
   <?php foreach ($dates as $year => $months): ?>
     <li>
-      <a href="/<?= $year ?>" class="nav-header">
+      <a href="<?php echo $site->url() ?>/<?= $year ?>" class="nav-header">
         <?= $year ?>
       </a>
       <ul class="nav">
