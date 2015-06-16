@@ -29,6 +29,8 @@
 
 			<?= snippet('nav-pager') ?>
 
+			<?= disqus_comments($post) ?>
+		
 		</section>
 		<?php snippet('sidebar') ?>
 	</div>

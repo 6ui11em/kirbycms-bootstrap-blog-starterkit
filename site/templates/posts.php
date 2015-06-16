@@ -24,6 +24,7 @@
 																					 'author'     => true,
 																					 'tags'       => true,
 																					 'category'   => true,
+																					 'comments'		=> true,
 																					 'class'			=> 'post-footer col-xs-12')) ?>
 			</article>
 		<?php endforeach ?>

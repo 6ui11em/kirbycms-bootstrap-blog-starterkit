@@ -5,6 +5,7 @@ if(!isset($avatar))   $avatar   = false;
 if(!isset($tags))     $tags     = false;
 if(!isset($category)) $category = false;
 if(!isset($class))    $class    = false;
+if(!isset($comments)) $comments    = false;
 ?>
 
 <footer <?php if($class) echo 'class="' . $class . '"' ?>>
@@ -23,25 +24,28 @@ if(!isset($class))    $class    = false;
 				<?php if($date): ?>
 						on <time datetime="<?= $post->date('Y-m-d') ?>"><?= $post->date(c::get('posts-date-format')) ?></time>
 				<?php endif ?>
+				<?php if($category &&  $post->category() != ""): ?>
+						in 
+						<a href="<?= $site->url()
+											 . '/category/'
+											 . urlencode($post->category()) ?>">
+							<?= $post->category()->html() ?>
+						</a>
+				<?php endif ?>
 			</div>
 		<?php endif ?>
 
 		<?php if($tags && $post->tags() != ""): ?>
-			<div class="tags col-sm-4">
-				Tags:
+			<div class="tags col-sm-6">
+				Tags: 
 					<?php foreach($post->tags()->split(',') as $k => $tag): ?><?php if ($k > 0) echo ', '; ?><a href="<?= $site->url() ?>/tag/<?= urlencode($tag) ?>"><?= trim($tag) ?></a><?php endforeach ?>
 			</div>
 		<?php endif ?>
-
-		<?php if($category &&  $post->category() != ""): ?>
-			<div class="category col-sm-3">
-				Category:
-				<a href="<?= $site->url()
-									 . '/category/'
-									 . urlencode($post->category()) ?>">
-					<?= $post->category()->html() ?>
-				</a>
-			</div>
+		
+		<?php if($comments) : ?>
+		<div class="col-sm-1 text-right">
+			<?= disqus_counter($post) ?> <span class="glyphicon glyphicon-comment"></span>
+		</div>
 		<?php endif ?>
 	</div>
 
