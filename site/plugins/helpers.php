@@ -144,7 +144,7 @@ function getAuthorsArchive() {
  * @param  int $length (optional, default config value)
  * @return string
  */
-function getPostExcerpt($post, $length) {
+function getPostExcerpt($post, $length = '') {
 	if (empty($length))
 		$length = c::get('excerpt-length');
 	
