@@ -1,5 +1,5 @@
     <nav role="navigation">
-    	<ul class="pagination">
+    	<ul class="pager">
       <?php if($prev = $page->prevVisible()): ?>
 				<li><a href="<?php echo $prev->url() ?>" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
      	<?php else : ?>

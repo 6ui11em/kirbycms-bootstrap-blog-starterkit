@@ -1,30 +1,44 @@
 <?php snippet( 'header') ?>
 
-<section id="post">
+<div class="container">
+	<div class="row main">
+		<section id="post" class="col-sm-9 single-post">
 
-<article>
-  <header>
-    <h1>
-      <a href="<?= getPostUrl($post) ?>">
-        <?= $post->title()->html() ?>
-      </a>
-    </h1>
-  </header>
+			<article class="post row">
+				<header class="col-xs-12">
+					<?= getCoverImage($post, array('class' => 'img-responsive')) ?>
+					<h1 class="post-title">
+						<a href="<?= getPostUrl($post) ?>">
+							<?= $post->title()->html() ?>
+						</a>
+					</h1>
+					<div class="meta">
+						<span class="author">Posted by <a href="<?= $site->url() ?>/author/<?= urlencode($post->author()) ?>"><?php echo getAuthorName((string)$post->author()) ?></a></span> on <time datetime="<?= $post->date('Y-m-d') ?>"><?= $post->date(c::get('posts-date-format')) ?></time>
+					</div>
+				</header>
+				<div class="post-content col-xs-12">
+					<?= $post->text()->kirbytext() ?>
+				</div>
+				<?php snippet('post-footer', array('post'       => $post,
+																					 'author'     => true,
+																					 'avatar'     => true,
+																					 'tags'       => true,
+																					 'categories' => true,
+																					 'class'			=> 'col-xs-12')) ?>
+			</article>
 
-  <?php snippet('post-footer', array('post'       => $post,
-                                     'author'     => true,
-                                     'avatar'     => true,
-                                     'tags'       => true,
-                                     'categories' => true)) ?>
+			<?= snippet('nav-pager') ?>
 
-  <?= getCoverImage($post) ?>
-
-  <?= $post->text()->kirbytext() ?>
-
-</article>
-
-<?= snippet('nav-pager') ?>
-
-</section>
+		</section>
+		
+		<aside id="sidebar" class="sidebar col-sm-3">
+			<?php snippet('archives', array('dates'      => true,
+																			'authors'    => true,
+																			'tags'       => true,
+																			'categories' => true,
+																		  'class'			 => 'sidebar-widget')) ?>
+		</aside>
+	</div>
+</div>
 
 <?php snippet('footer') ?>

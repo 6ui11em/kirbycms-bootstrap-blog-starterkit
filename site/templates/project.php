@@ -23,7 +23,7 @@
 			
 		</div>
 		
-		<?php snippet('page-navigation') ?>
+		<?php snippet('nav-pager') ?>
 				
 	</div> <!-- // container -->
 

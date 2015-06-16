@@ -1,26 +1,30 @@
 <?php if($pagination->hasPages()): ?>
 
 <nav id="pagination">
-  <ul>
+  <ul class="pagination">
 
     <?php if($pagination->hasPrevPage()): ?>
       <li id="pagination-first">
-        <a href="<?php echo $pagination->firstPageURL() ?>">
-          &laquo;
+        <a href="<?php echo $pagination->firstPageURL() ?>" aria-label="First">
+          <span aria-hidden="true">&laquo;</span>
         </a>
       </li>
 
       <li id="pagination-prev">
-        <a href="<?php echo $pagination->prevPageURL() ?>">
-          &lsaquo;
+        <a href="<?php echo $pagination->prevPageURL() ?>" aria-label="Previous">
+          <span aria-hidden="true">&lsaquo;</span>
         </a>
       </li>
     <?php else: ?>
       <li id="pagination-first" class="disabled">
-        &laquo;
+        <a href="<?php echo $pagination->firstPageURL() ?>" aria-label="First">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
       </li>
       <li id="pagination-prev" class="disabled">
-        &lsaquo;
+        <a href="<?php echo $pagination->prevPageURL() ?>" aria-label="Previous">
+          <span aria-hidden="true">&lsaquo;</span>
+        </a>
       </li>
     <?php endif ?>
 
@@ -34,22 +38,26 @@
 
     <?php if($pagination->hasNextPage()): ?>
       <li id="pagination-next">
-        <a href="<?php echo $pagination->nextPageURL() ?>">
-          &rsaquo;
+        <a href="<?php echo $pagination->nextPageURL() ?>" aria-label="Next">
+          <span aria-hidden="true">&rsaquo;</span>
         </a>
       </li>
 
       <li id="pagination-last">
-        <a href="<?php echo $pagination->lastPageURL() ?>">
-          &raquo;
+        <a href="<?php echo $pagination->lastPageURL() ?>" aria-label="Last">
+          <span aria-hidden="true">&raquo;</span>
         </a>
       </li>
     <?php else: ?>
       <li id="pagination-next" class="disabled">
-        &rsaquo;
+        <a href="<?php echo $pagination->nextPageURL() ?>" aria-label="Next">
+          <span aria-hidden="true">&rsaquo;</span>
+        </a>
       </li>
       <li id="pagination-last" class="disabled">
-        &raquo;
+        <a href="<?php echo $pagination->lastPageURL() ?>" aria-label="Last">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
       </li>
     <?php endif ?>
 
