@@ -53,7 +53,7 @@ function getAuthorName($username) {
  * @param  mixed $post
  * @return string
  */
-function getCoverImage($post) {
+function getCoverImage($post, $attr = '') {
 
   $coverimage = (string)$post->coverimage();
 
@@ -61,6 +61,11 @@ function getCoverImage($post) {
     $img = brick('img');
     $img->attr('src', $post->image($coverimage)->url());
     $img->attr('alt', $post->title()->html());
+		
+		if (!empty($attr)) {
+			foreach ($attr as $k => $v) 
+				$img->attr($k, $v);
+		}
 
     return $img;
   }
@@ -75,7 +80,7 @@ function getCoverImage($post) {
  */
 function getDatesArchive() {
   $site = site();
-  $posts = $site->find('posts')->children()->visible();
+  $posts = $site->find(c::get('posts-page'))->children()->visible();
 
   if($posts->count() > 0) {
     foreach ($posts as $post) {
@@ -99,7 +104,7 @@ function getDatesArchive() {
  * @return array
  */
 function getTagsArchive() {
-  return tagcloud(page('posts'), array('field'   => 'tags',
+  return tagcloud(page(c::get('posts-page')), array('field'   => 'tags',
                                        'param'   => 'tag',
                                        'baseurl' => ''));
 }
@@ -112,7 +117,7 @@ function getTagsArchive() {
  * @return array
  */
 function getCategoriesArchive() {
-  return tagcloud(page('posts'), array('field'   => 'category',
+  return tagcloud(page(c::get('posts-page')), array('field'   => 'category',
                                        'param'   => 'category',
                                        'baseurl' => ''));
 }
@@ -125,7 +130,7 @@ function getCategoriesArchive() {
  * @return array
  */
 function getAuthorsArchive() {
-  return tagcloud(page('posts'), array('field'   => 'author',
+  return tagcloud(page(c::get('posts-page')), array('field'   => 'author',
                                        'param'   => 'author',
                                        'baseurl' => ''));
 }
