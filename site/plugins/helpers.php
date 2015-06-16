@@ -134,4 +134,21 @@ function getAuthorsArchive() {
                                        'param'   => 'author',
                                        'baseurl' => ''));
 }
+
+/**
+ * getPostExcerpt()
+ *
+ * Returns the first $limit words of the content of the post.
+ *
+ * @param  mixed $post
+ * @param  int $length (optional, default config value)
+ * @return string
+ */
+function getPostExcerpt($post, $length) {
+	if (empty($length))
+		$length = c::get('excerpt-length');
+	
+  return $post->text()->kirbytext()->excerpt($length, 'words');
+}
+
 ?>

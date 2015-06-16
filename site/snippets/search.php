@@ -1,8 +1,9 @@
 <form action="<?= $site->find('search')->url() ?>">
-  <input type="text" placeholder="search..." name="q">
-  <select name="l">
-    <option value="posts" selected>Posts</option>
-    <option value="site">Site</option>
-  </select>
-  <button type="submit" value="search">Find!</button>
+ <div class="input-group">
+		<input type="text" placeholder="Search for..." class="form-control" name="q">
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="submit" value="search"><span class="glyphicon glyphicon-search"></span></button>
+		</span>
+	</div><!-- /input-group -->
+  <input type="hidden" name="l" value="posts">
 </form>

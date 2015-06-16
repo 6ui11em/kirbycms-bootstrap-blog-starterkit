@@ -15,7 +15,7 @@ return function($site, $pages, $page) {
         break;
 
       default:
-        $results = $site->find('posts')
+        $results = $site->find(c::get('posts-page'))
                       ->search($query, array('words' => true))
                       ->visible();
         break;

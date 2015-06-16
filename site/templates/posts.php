@@ -18,7 +18,7 @@
 					<?= getCoverImage($post, array('class' => 'img-responsive')) ?>
 				</header>
 				<div class="post-content col-xs-12">
-					<?= $post->text()->kirbytext() ?>
+					<?= getPostExcerpt($post) ?>
 				</div>
 				<?php snippet('post-footer', array('post'       => $post,
 																					 'author'     => true,
@@ -31,14 +31,7 @@
 		<?php snippet('nav-pagination') ?>
 
 		</section>
-
-		<aside id="sidebar" class="sidebar col-sm-3">
-			<?php snippet('archives', array('dates'      => true,
-																			'authors'    => true,
-																			'tags'       => true,
-																			'categories' => true,
-																		  'class'			 => 'sidebar-widget')) ?>
-		</aside>
+		<?php snippet('sidebar') ?>
 	</div>
 </div>
 

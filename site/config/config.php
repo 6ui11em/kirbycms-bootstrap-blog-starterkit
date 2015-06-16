@@ -25,13 +25,15 @@ Blogprint Configuration
 
 */
 
-c::set('posts-page', 'blog');
-
+// pagination
 c::set('pagination-posts', 10);
 c::set('pagination-archive', 30);
 c::set('pagination-search', 30);
 
+// reading
+c::set('posts-page', 'blog');
 c::set('posts-date-format', 'd-m-Y');
+c::set('excerpt-length', 55); // words
 
 /*
 

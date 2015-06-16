@@ -30,14 +30,7 @@
 			<?= snippet('nav-pager') ?>
 
 		</section>
-		
-		<aside id="sidebar" class="sidebar col-sm-3">
-			<?php snippet('archives', array('dates'      => true,
-																			'authors'    => true,
-																			'tags'       => true,
-																			'categories' => true,
-																		  'class'			 => 'sidebar-widget')) ?>
-		</aside>
+		<?php snippet('sidebar') ?>
 	</div>
 </div>
 

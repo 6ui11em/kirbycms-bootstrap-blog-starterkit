@@ -51,12 +51,7 @@
 			<?php snippet('nav-pagination') ?>
 
 		</section>
-		<aside id="sidebar" class="sidebar col-sm-3">
-			<?php snippet('archives', array('dates'      => true,
-																			'authors'    => true,
-																			'tags'       => true,
-																			'categories' => true)) ?>
-		</aside>
+		<?php snippet('sidebar') ?>
 	</div>
 </div>		
 <?php snippet( 'footer') ?>
