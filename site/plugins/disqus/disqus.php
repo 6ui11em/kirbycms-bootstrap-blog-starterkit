@@ -8,16 +8,13 @@
  */
 function disqus_comments($post, $params = array()) {
 
-	if (!c::get('comments'))
-		return;
-	
   // set all default values
   $defaults = array(
     'disqus_shortname'			=> c::get('disqus-shortname'),
     'disqus_identifier '   	=> $post->slug(),
     'disqus_title '   			=> $post->title()->title(),
     'disqus_url ' 					=> getPostUrl($post),
-    'snippet'     => false,
+    'snippet'     					=> false,
   );
 
   $options = array_merge($defaults, $params);
@@ -28,13 +25,10 @@ function disqus_comments($post, $params = array()) {
     $html .= tpl::load(__DIR__ . DS . 'comments.php', $options);
   }
 
-  return $html;
+	return $html;
 }
 
 function disqus_counter($post) {
-	
-	if (!c::get('comments'))
-		return;
 	
 	$html .= tpl::load(__DIR__ . DS . 'counter.php', array(
 		'url'			=> getPostUrl($post),
@@ -46,15 +40,10 @@ function disqus_counter($post) {
 
 function disqus_footer($post) {
 
-	if (!c::get('comments'))
-		return;
-	
-	if (in_array($post->template(), c::get('disqus-templates'))) {
-    $html .= tpl::load(__DIR__ . DS . 'footer.php', array(
-			'disqus_shortname'			=> c::get('disqus-shortname')
-		));
-		
-		return $html;
-	}
+	$html .= tpl::load(__DIR__ . DS . 'footer.php', array(
+		'disqus_shortname'			=> c::get('disqus-shortname')
+	));
+
+	return $html;
 }
 

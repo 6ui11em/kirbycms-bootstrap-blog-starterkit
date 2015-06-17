@@ -151,4 +151,58 @@ function getPostExcerpt($post, $length = '') {
   return $post->text()->kirbytext()->excerpt($length, 'words');
 }
 
+/**
+ * getPostComments()
+ *
+ * Returns the first $limit words of the content of the post.
+ *
+ * @param  mixed $post
+ * @return string
+ */
+function getPostComments($post) {
+	
+	if (!c::get('comments'))
+		return;
+
+	return disqus_comments($post);
+}
+	
+/**
+ * getPostCommentsCounter()
+ *
+ * Returns the first $limit words of the content of the post.
+ *
+ * @param  mixed $post
+ * @return string
+ */
+function getPostCommentsCounter($post) {
+	
+	if (!c::get('comments'))
+		return;
+	
+	return disqus_counter($post);
+}
+	
+/**
+ * getPostCommentsCounter()
+ *
+ * Returns the first $limit words of the content of the post.
+ *
+ * @param  mixed $post
+ * @return string
+ */
+function getBlogFooter($post) {
+	
+	if (!in_array($post->template(), c::get('posts-templates')))
+		return;
+	
+	$html = '';
+	
+	if (c::get('comments'))
+		$html .= disqus_footer();
+	
+	return $html;
+}
+	
+
 ?>

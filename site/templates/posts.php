@@ -24,7 +24,7 @@
 																					 'author'     => true,
 																					 'tags'       => true,
 																					 'category'   => true,
-																					 'comments'		=> true,
+																					 'comments'		=> c::get('comments'),
 																					 'class'			=> 'post-footer col-xs-12')) ?>
 			</article>
 		<?php endforeach ?>

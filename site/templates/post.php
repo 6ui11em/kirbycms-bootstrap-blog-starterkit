@@ -24,12 +24,13 @@
 																					 'avatar'     => true,
 																					 'tags'       => true,
 																					 'categories' => true,
+																					 'comments'		=> c::get('comments'),
 																					 'class'			=> 'col-xs-12')) ?>
 			</article>
 
 			<?= snippet('nav-pager') ?>
 
-			<?= disqus_comments($post) ?>
+			<?= getPostComments($post) ?>
 		
 		</section>
 		<?php snippet('sidebar') ?>

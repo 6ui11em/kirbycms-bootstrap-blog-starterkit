@@ -5,7 +5,7 @@ if(!isset($avatar))   $avatar   = false;
 if(!isset($tags))     $tags     = false;
 if(!isset($category)) $category = false;
 if(!isset($class))    $class    = false;
-if(!isset($comments)) $comments    = false;
+if(!isset($comments)) $comments = false;
 ?>
 
 <footer <?php if($class) echo 'class="' . $class . '"' ?>>
@@ -44,7 +44,7 @@ if(!isset($comments)) $comments    = false;
 		
 		<?php if($comments) : ?>
 		<div class="col-sm-1 text-right">
-			<?= disqus_counter($post) ?> <span class="glyphicon glyphicon-comment"></span>
+			<?= getPostCommentsCounter($post) ?> <span class="glyphicon glyphicon-comment"></span>
 		</div>
 		<?php endif ?>
 	</div>

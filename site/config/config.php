@@ -32,13 +32,13 @@ c::set('pagination-search', 30);
 
 // reading
 c::set('posts-page', 'blog');
+c::set('posts-templates', array('post', 'posts', 'archive', 'search'));
 c::set('posts-date-format', 'd-m-Y');
 c::set('excerpt-length', 55); // words
 
 // comments
-c::set('comments', false);
+c::set('comments', true);
 c::set('disqus-shortname', 'yourshortname');
-c::set('disqus-templates', array('posts', 'archive', 'search'));
 
 /*
 
