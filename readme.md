@@ -2,7 +2,7 @@
 
 Blog Starterkit merges Kirby CMS Bootstrap Starterkit and Blogprint of Jan Hofmann to offer a great Kirby starter for projects that needs a blog.
 
-Blogprint repo: <https://github.com/ausminternet/blogprint> 
+Blogprint repo: <https://github.com/ausminternet/blogprint>  
 Kirby CMS Bootstrap Starterkit repo: <https://github.com/6ui11em/kirbycms-bootstrap-starterkit>
 
 # Kirby
