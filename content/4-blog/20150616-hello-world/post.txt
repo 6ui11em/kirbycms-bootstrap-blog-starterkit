@@ -1,0 +1,25 @@
+Title: Hello world!
+
+----
+
+Date: 2015-06-16
+
+----
+
+Author: bajoelcocotero
+
+----
+
+Coverimage: 
+
+----
+
+Category: general
+
+----
+
+Tags: demo
+
+----
+
+Text: This is the first post of your blog.

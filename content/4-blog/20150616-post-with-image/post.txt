@@ -1,0 +1,25 @@
+Title: Post with image
+
+----
+
+Date: 2015-06-16
+
+----
+
+Author: bajoelcocotero
+
+----
+
+Coverimage: post-kirby.jpg
+
+----
+
+Category: general
+
+----
+
+Tags: demo,image
+
+----
+
+Text: This is your first post with Cover image
