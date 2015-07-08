@@ -14,7 +14,7 @@ Coverimage: post-kirby.jpg
 
 ----
 
-Category: general
+Category: general, stuff
 
 ----
 

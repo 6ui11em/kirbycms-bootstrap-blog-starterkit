@@ -25,12 +25,7 @@ if(!isset($comments)) $comments = false;
 						on <time datetime="<?= $post->date('Y-m-d') ?>"><?= $post->date(c::get('posts-date-format')) ?></time>
 				<?php endif ?>
 				<?php if($category &&  $post->category() != ""): ?>
-						in 
-						<a href="<?= $site->url()
-											 . '/category/'
-											 . urlencode($post->category()) ?>">
-							<?= $post->category()->html() ?>
-						</a>
+						in <?php $count=0; foreach($post->category()->split() as $cat) : if ($count > 0) echo ', '; ?><a href="<?= getCategoryURL($cat);  ?>"><?= getCategoryTitle($cat); ?></a><?php $count++; endforeach; ?>	
 				<?php endif ?>
 			</div>
 		<?php endif ?>

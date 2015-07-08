@@ -35,6 +35,7 @@ c::set('posts-page', 'blog');
 c::set('posts-templates', array('post', 'posts', 'archive', 'search'));
 c::set('posts-date-format', 'd-m-Y');
 c::set('excerpt-length', 55); // words
+c::set('categories-page', 'categories');
 
 // comments
 c::set('comments', true);

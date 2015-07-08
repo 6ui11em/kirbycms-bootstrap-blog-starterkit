@@ -136,6 +136,35 @@ function getAuthorsArchive() {
 }
 
 /**
+ * getCategoryTitle()
+ *
+ * Returns title of given category name.
+ *
+ * @return string
+ */
+function getCategoryTitle($cat) {
+	$categories = page(c::get('categories-page', 'categories'))->children();
+
+	if (count($categories) > 0) {
+		if ($cat_page = $categories->find($cat))
+			$cat = $cat_page->title();
+	}
+	
+	return $cat;
+}
+
+/**
+ * getCategoryURL()
+ *
+ * Returns title of given category url.
+ *
+ * @return string
+ */
+function getCategoryURL($cat) {	
+	return site()->url() . '/category/' . urlencode($cat);
+}
+
+/**
  * getPostExcerpt()
  *
  * Returns the first $limit words of the content of the post.

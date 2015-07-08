@@ -21,14 +21,12 @@ fields:
     label: Coverimage
     type: select
     options: images
-    width: 1/2
   category:
-    label: Category
-    type: select
-    width: 1/2
-    options:
-      general: general
-      stuff: stuff
+    label: Categories
+    type: checkboxes
+    options: query
+    query:
+	    page: categories
   tags:
     label: Tags
     type: tags
