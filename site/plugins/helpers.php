@@ -199,7 +199,7 @@ function getBlogFooter($post) {
 	$html = '';
 	
 	if (c::get('comments'))
-		$html .= disqus_footer();
+		$html .= disqus_footer($post);
 	
 	return $html;
 }
