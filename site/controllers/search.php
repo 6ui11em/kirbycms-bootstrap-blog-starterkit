@@ -28,7 +28,7 @@ return function($site, $pages, $page) {
 
 
   //pass all variables to the template
-  return compact('results', 'query');
+  return compact('results', 'query', 'pagination');
 
 };
 
